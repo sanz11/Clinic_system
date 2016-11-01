@@ -50,9 +50,8 @@
 				    <div class="menu-ad">
 				        <a href="?pagina=clientes.php"><span class="glyphicon glyphicon-check"></span>Clientes</a>
 				        <a href="?pagina=carnet.php"><span class="glyphicon glyphicon-credit-card"></span>carnets</a>
-				        
 				    </div>
-				    <?php echo @$mmsactualizar;?>
+				    <div class="alert alert-warning"><?php echo @$mmsactualizar;?></div>
 				</div>
 				</nav>		
 		</div>
@@ -90,6 +89,7 @@
     <p class="help-block">28MG</p>
   </div>
   <input style="display:none;"type="text" value="<?php echo $_SESSION['dni'];?>" name="dniactu">
+  <input style="display:none;"type="text" value="<?php echo $_SESSION['foto'];?>" name="fotoactu">
   <center>
   <input type="submit" class="btn btn-primary" name="actualizar" value="Actualizar"/>
   <button type="button" class="btn btn-info" class="close" data-dismiss="modal" aria-hidden="true" >Cancelar</button></center>
