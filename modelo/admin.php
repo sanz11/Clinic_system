@@ -85,11 +85,11 @@
                 $statement->bindParam(':dni',$dni);     
 		  
 		  		if(!$statement){
-			  		return "error al actualizar el registro";
+			  		return "error al actualizar";
 					
 		  		}else{
 			   		$statement->execute();
-			  		return "se actualizo el registro";
+			  		return "tus datos se actualizaron <strong>correctamente.<br>Vuelva a iniciar sessión</strong> para ver los cambios";
 				}
 		  
 	 	}

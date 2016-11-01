@@ -53,7 +53,7 @@
 				        <a href="?pagina=carnet.php"><span class="glyphicon glyphicon-credit-card"></span>carnets</a>
 				        
 				    </div>
-				    <?php echo @$mmsactualizar;?>
+				    <div class="alert alert-warning"><?php echo @$mmsactualizar;?></div>
 				</div>
 				</nav>		
 		</div>
@@ -86,11 +86,12 @@
     <input type="text" class="form-control" value="<?php echo $_SESSION["nick"];?>" name="telefono">
   </div>
   <div class="form-group">
-    <label for="ejemplo_archivo_1">Editar foto de perfil</label>
+    <label for="ejemplo_archivo_1" >Editar foto de perfil</label>
     <input type="file" name="fotosub">
     <p class="help-block">28MG</p>
   </div>
   <input style="display:none;"type="text" value="<?php echo $_SESSION['dni'];?>" name="dniactu">
+  <input style="display:none;"type="text" value="<?php echo $_SESSION['foto'];?>" name="fotoactu">
   <center>
   <input type="submit" class="btn btn-primary" name="actualizar" value="Actualizar"/>
   <button type="button" class="btn btn-info" class="close" data-dismiss="modal" aria-hidden="true" >Cancelar</button></center>
