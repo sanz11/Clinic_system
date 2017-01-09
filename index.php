@@ -1,52 +1,94 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title></title>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/login.css">
-<link rel="shortcut icon" href="img/ico/favicon.png">
-	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-</head>
-<body> 
-  
-<?php include 'controlador/login.php';?>
+<html>
 
-<div class="container">
-    <div class="row">
-       <br>
-                    <br>
-                    <br>
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <div class="account-wall">
-                <img class="profile-img" src="https://waterviewdentistry.com/wp-content/uploads/2016/04/admin-ajax-34.jpeg"
-                    alt="">
-                     <!--MENSAJE DE ERROR-->
-                  
-                  <div class="<?php echo $clase;?>">
-                    <button type="button" class="close" data-dismiss="alert"><?php echo @$cerrar;?></button>
-                    <h1 class="vd_alert-icon <?php echo $icono;?>">
-                   </h1><strong><?php echo $mensaje;?> </strong> <?php echo @$error[3];?> </div>
-                  
-                    
-                                       <!--MENSAJE DE ERROR--> 
-                    
-                <form class="form-signin" action="?" method="post">
-                <input type="text" class="form-control" placeholder="DNI" name="user">
-                    <h4 class="alert-danger"><?php echo @$error[1];?></h4>
-                <input type="password" class="form-control" name="pass" placeholder="Password">
-                   <h4 class="alert-danger"><?php echo @$error[2];?></h4>
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" name="ingresar" value="Ingresar">
-                 
-                <a href="#" class="pull-right need-help">Olvide mi contraseña </a>
-                </form>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section"></div>
+  <main>
+    <center>
+      <img class="responsive-img" style="width: 250px;" src="http://i.imgur.com/ax0NCsK.gif" />
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Please, login into your account</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+          <form class="col s12" method="post">
+            <div class='row'>
+              <div class='col s12'>
+              </div>
             </div>
-            
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+              </div>
+              <label style='float: right;'>
+								<a class='pink-text' href='#!'><b>Forgot Password?</b></a>
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+              </div>
+            </center>
+          </form>
         </div>
-    </div>
-</div>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+      </div>
+      <a href="#!">Create account</a>
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </body>
+
 </html>

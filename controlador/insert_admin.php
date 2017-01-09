@@ -14,7 +14,9 @@ $mensaje="";
 @$fecha=$_POST['fecha'];
 
 $consulta= new admin();
+    
 $existe =$consulta->existeAdmin($dni);
+    
 if(!$existe){
     $mensaje=$consulta->insertarAdmin($dni,$nombre,$apellidos,$nick,$correo,$tipo,$password,$fecha);
 }else{
