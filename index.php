@@ -33,11 +33,12 @@
             <p class="center login-form-text">Inicio de sesión</p>
           </div>
         </div>
+        <?php echo @$error[3]; ?>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="prefix material-icons">perm_identity</i>
-            <input class="validate" id="email" name="user" type="text">
-            <label for="email" data-error="Escribe un correo válido" data-success="right" >Email</label>
+            <input class="validate" id="email" name="user" type="text" minlength=4 maxlength=8 >
+            <label for="email" data-error="Escribe un DNI válido" data-success="DNI valido" >DNI</label>
           </div>
         </div>
 		
@@ -77,6 +78,12 @@
  <script type="text/javascript" src="js/jquery.js"></script>
   <!--materialize js-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    function display(id){
+    $(id).css("display","none");
+}
+    
+    </script>
 
   
   

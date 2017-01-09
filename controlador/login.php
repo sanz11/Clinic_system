@@ -5,7 +5,7 @@
 	$mensaje="";
 	session_start();
 	if(@$_GET["cerrar"]){
-		session_unset('nombre');
+		session_unset('vet_dni');
 		session_destroy();
 	}
 	
@@ -17,12 +17,7 @@
 				$consulta=$mysqli->query("select * from administrador where dni='$cuenta' and password='$password'");
 				if(mysqli_num_rows($consulta)){
 					$arreglo=mysqli_fetch_array($consulta);
-					$_SESSION["nombre"]=$arreglo["nombre"];
-                    $_SESSION["dni"]=$arreglo["dni"];
-                    $_SESSION["nick"]=$arreglo["nick"];
-                    $_SESSION["apellidos"]=$arreglo["apellidos"];
-					$_SESSION["correo"]=$arreglo["correo"];
-					$_SESSION["foto"]=$arreglo["foto"];
+                    $_SESSION["vet_dni"]=$arreglo["dni"];
                     
                     $tipo=$arreglo["tipo_admin"];
         
@@ -36,17 +31,43 @@
                     
 					
 				}else{
-					$error[3]="Usuario o Contraseña incorrecta";
-					$clase="alert alert-danger";
-                    $cerrar="&times;";
-					$icono="fa fa-exclamation-circle vd_red";
-					$mensaje="¡Oh no!";
+					$error[3]='<div class="row display-one" id="message">
+           <ul class="collection">
+             <li class="collection-item avatar">
+              <i class="material-icons circle red">warning</i>
+              <span class="title">OH NO!!</span>
+              <p>Usuario o contraseña <br> Incorrecta
+              </p>
+              <a href="javascript:display(message);" class="secondary-content "><i class="material-icons red-text accent-4">loop</i></a>
+            </li>
+          </ul>
+        </div>';
 				}
 			}else{
-				$error[2]="Ingrese la contraseña";
+				$error[3]='<div class="row display-one" id="message">
+           <ul class="collection">
+             <li class="collection-item avatar">
+              <i class="material-icons circle red">warning</i>
+              <span class="title">POR FAVOR!</span>
+              <p>Llene el campo de CONTRASEÑA<br> Incorrecta
+              </p>
+              <a href="javascript:display(message);" class="secondary-content "><i class="material-icons red-text accent-4">loop</i></a>
+            </li>
+          </ul>
+        </div>';
 			}
 		}else{
-			$error[1]="Ingrese el su DNI";
+			$error[3]='<div class="row display-one" id="message">
+           <ul class="collection">
+             <li class="collection-item avatar">
+              <i class="material-icons circle red">warning</i>
+              <span class="title">POR FAVOR!!</span>
+              <p>Llene el campo de DNI <br> Incorrecta
+              </p>
+              <a href="javascript:display(message);" class="secondary-content "><i class="material-icons red-text accent-4">loop</i></a>
+            </li>
+          </ul>
+        </div>';
 		}
 	}
 	
